@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--suppress ALL-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div align="center">
+        <table border="1">
+            <tr align="center">
+                <td>图书编号</td>
+                <td>图书名</td>
+                <td>价格</td>
+                <td>图书类型编号</td>
+                <td>出版时间</td>
+                <td>图片路径</td>
+                <td>审核状态</td>
+            </tr>
+            <tr th:each="s:${ALLs}">
+                <td th:text="${s.bid}"></td>
+                <td th:text="${s.bname}"></td>
+                <td th:text="${s.price}"></td>
+                <td th:text="${s.btid}"></td>
+                <td th:text="${s.dtime}"></td>
+                <td th:text="${s.imgurl}"></td>
+                <td th:text="${s.state}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

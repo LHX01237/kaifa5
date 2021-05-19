@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <settings>
+        <!--设置mybatis执行过程中显示sql语句在控制台-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!--设置mybatis延迟加载，按需取数据-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- 设置加载行为为消极加载 -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+
+	<environments default="mysql">
+        <environment id="mysql">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="pooled">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/school"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+
+        <environment id="Oracle">
+            <transactionManager type="JDBC"/>
+            <dataSource type="pooled">
+                <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+                <property name="url" value="jdbc:oracle:thin:@localhost:1521:ORCL"/>
+                <property name="username" value="scott"/>
+                <property name="password" value="tiger"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mappers/studentinfoMapper.xml"></mapper>
+    </mappers>
+</configuration>

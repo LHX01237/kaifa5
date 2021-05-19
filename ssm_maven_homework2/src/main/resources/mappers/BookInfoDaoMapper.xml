@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ck.dao.BookInfoDao">
+
+    <select id="moresearch" resultMap="select1">
+        select *from bookinfo
+        <where>
+            <if test="btname !=null and btname !=''">
+                and btname = #{btname}
+            </if>
+            <if test="bname !=null and bname !=''">
+                and bname like %#{bname}%
+            </if>
+        </where>
+    </select>
+</mapper>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--suppress ALL-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <div align="center">
+       <table border="1">
+           <tr align="center">
+               <td>编号</td>
+               <td>姓名</td>
+               <td>地址</td>
+               <td>人数</td>
+           </tr>
+           <tr th:each="a:${All}" align="center">
+               <td th:text="${a.id}"></td>
+               <td th:text="${a.name}"></td>
+               <td th:text="${a.address}"></td>
+               <td th:text="${a.peoples}"></td>
+           </tr>
+       </table>
+   </div>
+</body>
+</html>
